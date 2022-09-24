@@ -31,7 +31,7 @@ export default {
   },
   setup() {
     getAvatars().then((data) => {
-      console.log('data');
+      console.log(data);
       this.people = data 
     }) 
   },
