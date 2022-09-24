@@ -1,21 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="m-5">
+    <h1 class="text-3xl pb-5">Choose your avatar</h1>
+    <ChooseAvatars msg="Welcome to Your Vue.js App" />
+
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ChooseAvatars from './components/ChooseAvatars.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ChooseAvatars
   }
 }
 </script>
 
 <style>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+
 </style>
