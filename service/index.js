@@ -19,17 +19,20 @@ const app = express();
 app.use(express.json());
 
 app.get("/avatars", (req, res) => {
-    res.json({
-        "Russel": {
+    res.json([
+        {
+            "name": ":Russel",
             "url": "images/dino/Idle (1).png"
         },
-        "Tank": {
+        {
+            "name": ":Tank",
             "url": "images/robot/Idle (1).png"
         },
-        "Stella": {
+        {
+            "name": ":Stella",
             "url": "images/ninja/Idle__000.png"
         }
-    });
+    ]);
 });
 
 app.post("/create", (req, res) => {
