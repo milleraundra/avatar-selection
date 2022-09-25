@@ -1,7 +1,7 @@
 <template>
   <ul class="divide-y divide-gray-200">
     <li v-for="person in this.people" :key="person.name" class="py-4 flex">
-      <img class="h-10 w-10 rounded-full" :src="'../' + person.url" alt="" />
+      <img class="h-10 w-10 rounded-full" :src="require('@/assets/images/' + person.url)" alt="" />
       <div class="ml-3">
         <p class="text-sm font-medium text-gray-900">{{ person.name }}</p>
         <!-- <p class="text-sm text-gray-500">{{ person.email }}</p> -->
@@ -15,8 +15,6 @@
     API to post to db
     todo: learn how to store image assets properly in mongo
     write API to 
-
-
   -->
 </template>
 
@@ -29,9 +27,8 @@ export default {
       people: []
     }
   },
-  setup() {
+  beforeMount() {
     getAvatars().then((data) => {
-      console.log(data);
       this.people = data 
     }) 
   },

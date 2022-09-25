@@ -24,16 +24,16 @@ app.use(cors({
 app.get("/avatars", (req, res) => {
     res.json([
         {
-            "name": ":Russel",
-            "url": "images/dino/Idle (1).png"
+            "name": "Russel",
+            "url": "dino/dino.png"
         },
         {
-            "name": ":Tank",
-            "url": "images/robot/Idle (1).png"
+            "name": "Tank",
+            "url": "robot/robot.png"
         },
         {
-            "name": ":Stella",
-            "url": "images/ninja/Idle__000.png"
+            "name": "Stella",
+            "url": "ninja/ninja.png"
         }
     ]);
 });
