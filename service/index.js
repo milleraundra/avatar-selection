@@ -38,19 +38,23 @@ app.get("/avatars", (req, res) => {
     ]);
 });
 
-app.post("/create", (req, res) => {
+app.post("/claim", (req, res) => {
     // will create a player with a name, avatar, and super power
     const id = uuid();
-    const body = req.body;
+    body = req.body;
+
+    if (Object.keys(body).length == 0) {
+        return res.sendStatus(400)
+    }
     const user = {
         _id: id,
         name: body['name'] ? body['name'] : 'Anonymous',
         avatar: body['avatar'] ? body['avatar'] : '',
         superpower: body['superpower'] ? body['superpower'] : '' 
     };
+    console.log(user);
 
     client.connect().then(result => {
-        console.log(result);
         const collection = client.db("Avatars").collection("Users");
         collection.insertOne(user).then(() => {
             client.close();
